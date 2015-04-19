@@ -1,0 +1,52 @@
+*, body, html{
+	margin:0;
+	padding:0;
+	outline: none !important;
+}
+
+html, body{
+	overflow: hidden;
+	position:fixed;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+}
+
+html{
+	background: #111;
+}
+
+body{
+	background: #111 url('/img/bg/bg.jpg') center repeat fixed;
+	color: #f5ffd3;
+	font-family: 'gill sans mt','gill sans','segoe ui',segoe,'century gothic','urw gothic l','trebuchet ms',trebuchet,helvetica,arial,sans-serif;
+	text-align: center;
+}
+
+._-footer{
+	position:fixed;
+	right:0;
+	bottom:0;
+	left:0;
+	height:4%;
+	border-top:double 3px;
+	background: #373930;
+	opacity: .5;
+	box-shadow: 0 0 2em #000;
+}
+
+._-footer ._-copyright{
+	float:right;
+	margin-right:1%;
+	font-size:1.75vh;
+	line-height:2.25em;
+	text-align: right;
+	text-shadow: 0 0 .125em #151513;
+}
+
+._-footer ._-copyright a{
+	color:#9ca286;
+	font-family:'century gothic','urw gothic l','trebuchet ms',trebuchet,helvetica,arial,sans-serif;
+	text-decoration: none;
+}
