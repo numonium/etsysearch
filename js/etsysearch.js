@@ -17,6 +17,7 @@
 		this.eles = {
 			form : (args && args.search.form ? args.search.form : ''),
 			search : (args && args.search.ele ? args.search.ele : ''),
+			title : (args && args.search.title ? args.search.title : ''),
 			results : (args && args.search.results ? args.search.results : ''), 
 		};
 		
@@ -244,12 +245,16 @@
 			
 			this.eles.results.setAttribute('data-_-state', args.type);
 			
+			_.log('###',this.eles.title);
+			
+			this.eles.title.innerHTML = (args.data.count === 0 ? 'No' : args.data.count) + ' Result' + (args.data.count !== 1 ? 's': '') + ' Found for &ldquo;' + this.q + '&rdquo;';
+			
 			if(!args.data.count){
 				return false;
 			}
 			
 			var result = null;
-			__t.eles.resultsList.innerHTML = '';
+			this.eles.resultsList.innerHTML = '';
 			
 			for(var i in args.data.results){
 				if(!args.data.results.hasOwnProperty(i)){
@@ -261,22 +266,6 @@
 				}
 				
 			}
-			
-/*
-	
-			<a class="_-listing--item--link" href="">
-				<div class="_-listing--item--title--wrapper">
-					<h2 class="_-listing--item--title"></h2>
-				</div>
-				<div class="_-listing--item--cat--wrapper">
-					<h3 class="_-listing--item--cat"></h3>
-				</div>
-				<div class="_-listing--item--content--wrapper">
-					<div class="_-listing--item--content"></div>
-				</div>
-			</a>
-*/			
-
 			
 			_.log('api[etsysearch][results]',this,args.data,args.type);
 		},
