@@ -243,11 +243,8 @@
 				this.title(title);
 			}
 			
-			this.eles.results.setAttribute('data-_-state', args.type);
-			
-			_.log('###',this.eles.title);
-			
-			this.eles.title.innerHTML = (args.data.count === 0 ? 'No' : args.data.count) + ' Result' + (args.data.count !== 1 ? 's': '') + ' Found for &ldquo;' + this.q + '&rdquo;';
+			this.eles.results.setAttribute('data-_-state', args.type);			
+			this.eles.title.innerHTML = (args.data.count === 0 ? 'No' : _.str.numberFormat(args.data.count)) + ' Result' + (args.data.count !== 1 ? 's': '') + ' Found for &ldquo;' + this.q + '&rdquo;' + (!args.data.count ? ' :(' : ':');
 			
 			if(!args.data.count){
 				return false;

@@ -445,6 +445,9 @@ _ = {
 	},
 	routers : {},
 	str : {
+		numberFormat : function(x){
+			return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");	
+		},
 		token : function(str,wrap,num){
 			wrap = wrap || '#';
 			num = num || 2;
