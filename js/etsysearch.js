@@ -15,6 +15,7 @@
 		this.cfg.hashbang = '#!';
 		
 		this.eles = {
+			form : (args && args.search.form ? args.search.form : ''),
 			search : (args && args.search.ele ? args.search.ele : ''),
 			results : (args && args.search.results ? args.search.results : ''), 
 		};
@@ -28,7 +29,8 @@
 				_stub : ' - EtsySearch&trade;',
 				err : 'Error :(',
 				loading : 'Searching for "' + _.str.token('q') + '"...',
-				results : _.str.token('num') + ' Results for "' + _.str.token('q') + '"'
+				results : _.str.token('num') + ' Results for "' + _.str.token('q') + '"',
+				welcome : 'Welcome'
 			}
 		};
 		
@@ -53,11 +55,26 @@
 				
 				var cmd = hash.shift();
 				
-				if(cmd == 'search'){
-					return __t.e.search.q({
-						q : hash.shift()
-					});
+				if(__t.e[cmd]){
+					if(cmd == 'search'){
+						return __t.e.search.q.call(__t,{
+							q : hash.shift()
+						});
+					}else{
+						return __t.e[cmd].call(__t,{
+							q : hash.shift()
+						});
+					}
 				}
+				
+				_.log('api[etsysearch][->] ERR',cmd,hash);
+			},
+			reset : function(args){
+				this.eles.resultsList.innerHTML = '';
+				this.eles.search.value = '';
+				this.title(__t.str.titles.welcome);
+				this.eles.results.setAttribute('data-_-state','');
+				alert('ddd');
 			},
 			search : {
 				q : function(args){
@@ -68,6 +85,7 @@
 					
 					if(val && __t.eles.search && (__t.eles.search.value == '')){
 						__t.eles.search.value = val;
+						__t.eles.search.className = __t.eles.search.className.replace('_-blank','').trim();
 					}
 					
 					_.log('api[etsysearch][q][?]',val,q);
@@ -97,11 +115,25 @@
 						}
 					});
 				},
+				reset : function(e){
+					
+					window.location.href = __t.url({
+						svc : 'reset'
+					});
+
+				},
 				submit : function(e){
 					
 					if(!this.eles.search){
 						return false;
 					}
+					
+					if(!this.eles.search.value){
+						this.eles.search.className += ' _-blank';
+						return false;
+					}
+					
+					this.eles.search.className = this.eles.search.className.replace('_-blank','').trim();
 					
 					var url = this.url({
 						svc : 'search',
@@ -128,13 +160,19 @@
 			this.tem.result = result.cloneNode(true);
 			result.parentNode.removeChild(result);
 
-			_.log('@@@@',this.tem.result);
-
 			if(this.forms.search){
 				$(this.forms.search).submit($.proxy(this.e.search.submit,this));
 			}
 			
+			if(this.eles.search){
+				this.eles.search.onkeyup = _.debounce(function(e){
+					return __t.e.search.submit.call(__t,e);
+				},200);
+			}
+			
 			window.addEventListener('hashchange',this.e.hashchange);
+			
+			this.eles.form.getElementsByClassName('_-input--reset')[0].onclick = this.e.search.reset;
 			
 			this.e.hashchange();
 
@@ -211,7 +249,7 @@
 			}
 			
 			var result = null;
-			__t.eles.resultsList.innerHTML='';
+			__t.eles.resultsList.innerHTML = '';
 			
 			for(var i in args.data.results){
 				if(!args.data.results.hasOwnProperty(i)){
@@ -271,7 +309,8 @@
 				sharedSecret : '1ts8ofw6oy'
 			},
 			search : {
-				ele : $('._-form._-form--search ._-form--search--q').get(0),
+				ele : document.getElementsByClassName('_-form _-form--search')[0].getElementsByClassName('_-form--search--q')[0],
+				title : document.getElementsByClassName('_-page--title')[0],
 				form : $('._-form._-form--search').get(0),
 				results : $('._-form--search--results').get(0)
 			}

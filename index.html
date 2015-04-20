@@ -5,8 +5,8 @@
 	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=0" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<title>EtsySearch&trade;</title>
-	<link rel="stylesheet" href="/css/fonts.css" /><!--
-	<link rel="stylesheet" href="/css/icons.css" /> -->
+	<link rel="stylesheet" href="/css/fonts.css" />
+	<link rel="stylesheet" href="/css/icons.css" />
 	<link rel="stylesheet" href="/css/_.css" />
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	<script type="text/javascript" src="/js/_.js"></script>
@@ -18,13 +18,23 @@
 			<a class="_-logo--nu" href="//www.numonium.com"><img src="/img/logo--nu--sm.png" width="100%" border="0" alt="Numonium Web Design and Media Production" /></a>
 			<a class="_-header--logo" href="/"><img src="/img/logo.png" alt="EtsySearch" width="100%" border="0" /><span class="_-text">EtsySearch</span></a>
 			<form class="_-header--search _-form _-form--search" method="post" action="" onsubmit="return false;" data-_-page="/form/search">
-				<input class="_-input--text _-form--search--q" type="text" name="search[q]" value="" />
-				<input class="_-input--submit _-button _-form--search--submit" type="submit" name="search[_submit]" value="&raquo;" />
+				<div class="_-form--search--q--wrapper">
+					<input class="_-input--text _-form--search--q _-blank" type="text" name="search[q]" value="" placeholder="What are you looking for?" autocomplete="off" />
+					<div class="_-form--search--q--buttons--wrapper">
+						<div class="_-form--search--q--buttons">
+							<div class="_-icon--wrapper">
+								<a class="_-input--reset _-icon _-icon--delete _-shape _-shape--cir">
+									<span class="_-icon--text">Delete</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
 			</form>
 		</header>
 		<section class="_-page--content _-content" data-_-page="content">
-			<h1>Search Results:</h1>
 			<div class="_-form--search--results" data-_-page="/form/search/results" data-_-state="">
+				<h1 class="_-page--title">Search Results:</h1>
 				<div class="_-form--search--results--empty" data-_-page="/form/search/results/empty">
 					<p>Apologies, no results could be found. Please try something else.</p>
 				</div>
@@ -61,4 +71,4 @@
 		<div class="_-copyright">&copy; 2015 <a href="//www.numonium.com" target="_blank">NUMONIUM //c</a></div>
 	</footer>
 </body>
-</html>
+</html	>

@@ -63,6 +63,75 @@ body{
 	display:block;
 }
 
+._-form--search{
+	display:block;
+	margin:4% auto;
+	margin:4vh auto;
+}
+
+._-form--search ._-form--search--q--wrapper{
+	position:relative;
+	padding: 1% 2em 1% .5em;
+	padding: 1vh 2em 1vh .5em;
+	font-family: 'exo','Rawengulk Sans',sans-serif;
+	font-weight: 200;
+	font-size:3vh;
+	background-color:#151513;
+	background-color:rgba(20,20,20,.6);
+	border:solid 1px #373930;
+	border-radius:12px;
+/*	color:#f5ffd3;*/
+	color:#373930;
+}
+
+._-form--search ._-form--search--q{
+	display:block;
+	width:100%;
+	font:inherit;
+	color:#f4f6d4;	
+	background: transparent;
+	border:0;
+}
+
+._-form--search ._-input--text._-blank + ._-form--search--q--buttons--wrapper{
+	display:none;
+}
+
+._-form--search ._-form--search--q--buttons--wrapper{
+	position: absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	width:5%;
+	height:100%;
+}
+
+._-form--search ._-form--search--q--buttons{
+	display:table;
+	width:100%;
+	height: 100%;	
+}
+
+._-form--search ._-form--search--q--buttons ._-icon--wrapper{
+	display:table-cell;
+	position: relative;
+	width:100%;
+	height:100%;
+	vertical-align: middle;
+}
+
+._-form--search ._-input--reset{
+	display:block;
+/*	position:absolute;
+	top:18%;
+	right:1%;
+	bottom:0;*/
+	width:2vw;
+	height:2vw;
+	margin: 0 auto;
+	color:#f5ffd3;
+}
+
 ._-listing--results--wrapper{
 	position:fixed;
 	top:55%;
