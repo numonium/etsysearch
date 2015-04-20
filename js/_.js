@@ -198,6 +198,20 @@ _ = {
 	api : {
 		// api declared objects here	
 	},
+	debounce : function(func, wait, immediate) {
+		var timeout;
+		return function() {
+			var context = this, args = arguments;
+			var later = function() {
+				timeout = null;
+				if (!immediate) func.apply(context, args);
+			};
+			var callNow = immediate && !timeout;
+			clearTimeout(timeout);
+			timeout = setTimeout(later, wait);
+			if (callNow) func.apply(context, args);
+		};
+	},
 	find : function(args){
 		var ret = false;
 		(function($){
@@ -446,6 +460,11 @@ _ = {
 		tokenReplace : function(str,token,replace,wrap,num){
 			
 			return str.replace(new RegExp(token,'g'),replace);
+		},
+		/* unicode : function(str) - convert html entity ("str") to unicode char *code*,
+				so it can be inserted in a js text node	*/
+		unicode : function(entity){
+			return "\\u" + parseInt(entity.slice(2, -1),10).toString(16);
 		}
 	},
 	tmp : {

@@ -148,17 +148,28 @@
 			
 			result._ = this.tem.result.cloneNode(true);
 			result._.setAttribute('data-_-item-uuid', data.listing_id);
+			result._.className = result._.className.replace(' _-blank','');
 
 			result.a = result._.getElementsByClassName('_-listing--item--link')[0];
 			result.a.href = data.url;
 			
 			result.title = result._.getElementsByClassName('_-listing--item--title')[0];
-			result.title.appendChild(document.createTextNode(data.title));
+			result.title.innerHTML = data.title; // use innerHTML here so we can transfer over HTML entities - will be escaped in TextNode
+			
+			result.title2 = result.title.cloneNode(true);
+			result.title2.className += ' _-text--outline';
+			result.title.parentNode.appendChild(result.title2);
 			
 			result.cat = result._.getElementsByClassName('_-listing--item--cat')[0];
-			result.cat.appendChild(document.createTextNode('in: '));
+//			result.cat.appendChild(document.createTextNode('in: '));
 			var tmp = document.createElement('strong');
 			tmp.appendChild(document.createTextNode(data.category_path ? data.category_path[0] : 'Unknown'));
+			result.cat.appendChild(tmp);
+			
+			result.cat.appendChild(document.createTextNode(' \u2013 '));
+			tmp = document.createElement('span');
+			tmp.className = '_-listing--item--price';
+			tmp.appendChild(document.createTextNode('$' + data.price));
 			result.cat.appendChild(tmp);
 			
 			result.content = result._.getElementsByClassName('_-listing--item--content')[0];
