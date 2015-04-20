@@ -24,6 +24,30 @@ body{
 	text-align: center;
 }
 
+._-header{
+	position:relative;
+	width:70%;
+	margin: 10vh auto 0;
+}
+
+._-header ._-logo--nu{
+	display:block;
+	position:absolute;
+	top:-20%;
+	top:0;
+	right:10%;
+	z-index:1000;
+	width:15%;	
+}
+
+._-header ._-header--logo{
+	display:block;
+}
+
+._-header ._-header--logo ._-text{
+	display:none;
+}
+
 ._-page ._-page--content ._-form--search--results{
 	
 }
