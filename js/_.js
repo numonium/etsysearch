@@ -1,6 +1,6 @@
 if((typeof _ !== 'undefined') && _.noConflict){ // previously-defined by underscore
 	var __ = _.noConflict();
-}else if(_){
+}else if(typeof _ !== 'undefined'){
 	var __ = _;
 }else{
 	var _ = {};
