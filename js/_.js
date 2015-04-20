@@ -1,3 +1,6 @@
+/* nimbus/* - basic libraries for framework
+	nimbus (c) 2012+ numonium //c	*/
+
 if((typeof _ !== 'undefined') && _.noConflict){ // previously-defined by underscore
 	var __ = _.noConflict();
 }else if(typeof _ !== 'undefined'){
