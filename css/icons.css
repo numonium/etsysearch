@@ -1,0 +1,151 @@
+._-icon{
+	display:block;
+	position: relative;
+	margin: 0 auto;
+}
+
+a._-icon{
+	cursor: pointer;
+}
+
+._-icon._-icon--delete > * {
+	position: absolute;
+	top:0;
+	left:0;
+}
+
+._-shape._-shape--cir{
+}
+
+._-shape._-shape--cir{
+	display: block;
+	width:100%;
+	height: 100%;
+	border:solid 2px #373930;
+	border-radius: 50%;
+	background: #373930;
+	vertical-align: middle;
+	-webkit-transform: scale(.9999);
+	transform: scale(.9999);
+}
+
+._-icon._-icon--delete._-shape--cir:hover{
+	background-color:#f3f4f4;
+	border-color:#f3f4f4;
+}
+
+._-icon._-icon--delete._-shape--cir:before,
+._-icon._-icon--delete._-shape--cir:after{
+	display:block;
+	position: absolute;
+	top:40%;
+	width:100%;
+	height:20%;
+	-webkit-transform-origin: center;
+	transform-origin: center;
+	background: #151217;
+	content:'';
+}
+
+._-icon._-icon--delete._-shape--cir:hover:before,
+._-icon._-icon--delete._-shape--cir:hover:after{
+	background: #151217;
+}
+
+._-icon._-icon--delete._-shape--cir:before{
+	-webkit-transform:rotate(-45deg) scale(.9999);
+	transform:rotate(-45deg) scale(.9999);
+}
+
+._-icon._-icon--delete._-shape--cir:after{
+	-webkit-transform:rotate(45deg) scale(.9999);
+	transform:rotate(45deg) scale(.9999);
+}
+
+._-icon._-icon--cloud{
+	position: absolute;
+/*	top:0;
+	left:0;*/
+	-webkit-transition: all 10s ease;
+	-moz-transition: all 10s ease;
+	-o-transition: all 10s ease;
+	-ms-transition: all 10s ease;
+	transition: all 10s ease;
+	opacity: 0;
+	-webkit-transform: scale(.9999);
+	-o-transform: scale(.9999);
+	-ms-transform: scale(.9999);
+	-moz-transform: scale(.9999);
+	transform: scale(.9999);	
+}
+
+._-icon._-icon--cloud:hover{
+	opacity: .95;
+/*	-o-transition-duration: 1s;
+	-moz-transition-duration: 1s;
+	-ms-transition-duration: 1s;
+	-webkit-transition-duration: 1s;
+	transition-duration: 1s;*/
+}
+
+/*._-icon._-icon--cloud._-icon--cloud--2{
+	top:30%;
+	left:70%;
+}*/
+
+._-icon._-icon--cloud ._-shape._-shape--cir{
+	background: #f3f4e4;
+	border:none;
+}
+
+._-icon._-icon--cloud ._-shape._-shape--cir{
+	display:inline-block;
+	position: relative;
+	width:40%;
+	height: 40%;
+	vertical-align: bottom;
+}
+
+._-icon._-icon--cloud ._-shape._-shape--cir._-shape--cir--2{
+	width:60%;
+	height:50%;
+	margin-left:-25%;
+	margin-right:-25%;
+}
+
+._-icon._-icon--cloud ._-icon--shadow{
+	position:absolute;
+	top:20%;
+	right:25%;
+	left:25%;
+	bottom:62%;
+	display: block;
+	box-shadow: 0 0 6em 2vw #fff;
+}
+
+._-icon ._-icon--text{
+	display: none;
+}
+
+
+#_-icons--wrapper{
+/*	position: relative;
+	margin-top:10%;*/
+	position:fixed;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+}
+
+#_-icons--wrapper ._-icon,
+._-icon--clouds--wrapper ._-icon{
+	width:256px;
+	height:256px;
+}
+
+._-icon--clouds--wrapper ._-icon{
+	width:20%;
+	max-width:256px;
+	height:25%;
+}

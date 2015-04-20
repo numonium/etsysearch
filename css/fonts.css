@@ -1,0 +1,201 @@
+@font-face {
+    font-family: 'exo';
+    src: url('/fonts/exo/exo--thin--italic.eot');
+    src: url('/fonts/exo/exo--thin--italic.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/exo/exo--thin--italic.woff') format('woff'),
+         url('/fonts/exo/exo--thin--italic.ttf') format('truetype'),
+         url('/fonts/exo/exo--thin--italic.svg#exothinitalic') format('svg');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'exo';
+    src: url('/fonts/exo/exo--thin.eot');
+    src: url('/fonts/exo/exo--thin.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/exo/exo--thin.woff') format('woff'),
+         url('/fonts/exo/exo--thin.ttf') format('truetype'),
+         url('/fonts/exo/exo--thin.svg#exothin') format('svg');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'exo';
+    src: url('/fonts/exo/exo--semi-bold--italic.eot');
+    src: url('/fonts/exo/exo--semi-bold--italic.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/exo/exo--semi-bold--italic.woff') format('woff'),
+         url('/fonts/exo/exo--semi-bold--italic.ttf') format('truetype'),
+         url('/fonts/exo/exo--semi-bold--italic.svg#exodemibolditalic') format('svg');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'exo';
+    src: url('/fonts/exo/exo--semi-bold.eot');
+    src: url('/fonts/exo/exo--semi-bold.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/exo/exo--semi-bold.woff') format('woff'),
+         url('/fonts/exo/exo--semi-bold.ttf') format('truetype'),
+         url('/fonts/exo/exo--semi-bold.svg#exodemibold') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'exo';
+    src: url('/fonts/exo/exo.eot');
+    src: url('/fonts/exo/exo.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/exo/exo.woff') format('woff'),
+         url('/fonts/exo/exo.ttf') format('truetype'),
+         url('/fonts/exo/exo.svg#exoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'exo';
+    src: url('/fonts/exo/exo--medium--italic.eot');
+    src: url('/fonts/exo/exo--medium--italic.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/exo/exo--medium--italic.woff') format('woff'),
+         url('/fonts/exo/exo--medium--italic.ttf') format('truetype'),
+         url('/fonts/exo/exo--medium--italic.svg#exomediumitalic') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'exo';
+    src: url('/fonts/exo/exo--medium.eot');
+    src: url('/fonts/exo/exo--medium.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/exo/exo--medium.woff') format('woff'),
+         url('/fonts/exo/exo--medium.ttf') format('truetype'),
+         url('/fonts/exo/exo--medium.svg#exomedium') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'exo';
+    src: url('/fonts/exo/exo--light--italic.eot');
+    src: url('/fonts/exo/exo--light--italic.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/exo/exo--light--italic.woff') format('woff'),
+         url('/fonts/exo/exo--light--italic.ttf') format('truetype'),
+         url('/fonts/exo/exo--light--italic.svg#exolightitalic') format('svg');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'exo';
+    src: url('/fonts/exo/exo--light.eot');
+    src: url('/fonts/exo/exo--light.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/exo/exo--light.woff') format('woff'),
+         url('/fonts/exo/exo--light.ttf') format('truetype'),
+         url('/fonts/exo/exo--light.svg#exolight') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'exo';
+    src: url('/fonts/exo/exo--italic.eot');
+    src: url('/fonts/exo/exo--italic.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/exo/exo--italic.woff') format('woff'),
+         url('/fonts/exo/exo--italic.ttf') format('truetype'),
+         url('/fonts/exo/exo--italic.svg#exoitalic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'exo';
+    src: url('/fonts/exo/exo--extra-light--italic.eot');
+    src: url('/fonts/exo/exo--extra-light--italic.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/exo/exo--extra-light--italic.woff') format('woff'),
+         url('/fonts/exo/exo--extra-light--italic.ttf') format('truetype'),
+         url('/fonts/exo/exo--extra-light--italic.svg#exoextralightitalic') format('svg');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'exo';
+    src: url('/fonts/exo/exo--extra-light.eot');
+    src: url('/fonts/exo/exo--extra-light.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/exo/exo--extra-light.woff') format('woff'),
+         url('/fonts/exo/exo--extra-light.ttf') format('truetype'),
+         url('/fonts/exo/exo--extra-light.svg#exoextralight') format('svg');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'exo';
+    src: url('/fonts/exo/exo--extra-bold--italic.eot');
+    src: url('/fonts/exo/exo--extra-bold--italic.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/exo/exo--extra-bold--italic.woff') format('woff'),
+         url('/fonts/exo/exo--extra-bold--italic.ttf') format('truetype'),
+         url('/fonts/exo/exo--extra-bold--italic.svg#exoextrabolditalic') format('svg');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'exo';
+    src: url('/fonts/exo/exo--extra-bold.eot');
+    src: url('/fonts/exo/exo--extra-bold.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/exo/exo--extra-bold.woff') format('woff'),
+         url('/fonts/exo/exo--extra-bold.ttf') format('truetype'),
+         url('/fonts/exo/exo--extra-bold.svg#exoextrabold') format('svg');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'exo';
+    src: url('/fonts/exo/exo--bold-italic.eot');
+    src: url('/fonts/exo/exo--bold-italic.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/exo/exo--bold-italic.woff') format('woff'),
+         url('/fonts/exo/exo--bold-italic.ttf') format('truetype'),
+         url('/fonts/exo/exo--bold-italic.svg#exobolditalic') format('svg');
+    font-weight: 700;
+    font-style: italic;
+}
+
+
+
+
+@font-face {
+    font-family: 'exo';
+    src: url('/fonts/exo/exo--bold.eot');
+    src: url('/fonts/exo/exo--bold.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/exo/exo--bold.woff') format('woff'),
+         url('/fonts/exo/exo--bold.ttf') format('truetype'),
+         url('/fonts/exo/exo--bold.svg#exobold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'exo';
+    src: url('/fonts/exo/exo--black-italic.eot');
+    src: url('/fonts/exo/exo--black-italic.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/exo/exo--black-italic.woff') format('woff'),
+         url('/fonts/exo/exo--black-italic.ttf') format('truetype'),
+         url('/fonts/exo/exo--black-italic.svg#exoblackitalic') format('svg');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'exo';
+    src: url('/fonts/exo/exo--block.eot');
+    src: url('/fonts/exo/exo--block.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/exo/exo--block.woff') format('woff'),
+         url('/fonts/exo/exo--block.ttf') format('truetype'),
+         url('/fonts/exo/exo--block.svg#exoblack') format('svg');
+    font-weight: 900;
+    font-style: normal;
+
+}
