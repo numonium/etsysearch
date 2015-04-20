@@ -24,6 +24,21 @@ body{
 	text-align: center;
 }
 
+._-page ._-page--content ._-form--search--results{
+	
+}
+
+._-page ._-page--content ._-form--search--results > *{
+	display:none;
+}
+
+._-page ._-page--content ._-form--search--results[data-_-state="err"] ._-form--search--results--err,
+._-page ._-page--content ._-form--search--results[data-_-state="empty"] ._-form--search--results--empty,
+._-page ._-page--content ._-form--search--results[data-_-state="loading"] ._-form--search--results--loading,
+._-page ._-page--content ._-form--search--results[data-_-state="*"] ._-form--search--results--results{
+	display:block;
+}
+
 ._-footer{
 	position:fixed;
 	right:0;

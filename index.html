@@ -22,14 +22,32 @@
 			</form>
 		</header>
 		<section class="_-page--content _-content" data-_-page="content">
-			<h2>Search Results:</h2>
-			<div class="_-form--search--results" data-_-page="/form/search/results">
+			<h1>Search Results:</h1>
+			<div class="_-form--search--results" data-_-page="/form/search/results" data-_-state="">
 				<div class="_-form--search--results--empty" data-_-page="/form/search/results/empty">
-					<p>Apologies, no results could be found. Please try something else</p>
+					<p>Apologies, no results could be found. Please try something else.</p>
+				</div>
+				<div class="_-form--search--results--err" data-_-page="/form/search/results/err">
+					<p>There was an error with your submission. Please try again.</p>
+				</div>
+				<div class="_-form--search--results--loading" data-_-page="/form/search/results/loading">
+					<p>Please wait while we load your results&hellip;</p>
 				</div>
 				<div class="_-form--search--results--results" data-_-page="/form/search/results/results">
 					<ul class="_-listing _-listing--results">
-						<li class="_-listing _-listing--item"></li>
+						<li class="_-listing _-listing--item _-blank" data-_-item-uuid="">
+							<a class="_-listing--item--link" href="" target="_blank">
+								<div class="_-listing--item--title--wrapper">
+									<h2 class="_-listing--item--title"></h2>
+								</div>
+								<div class="_-listing--item--cat--wrapper">
+									<h3 class="_-listing--item--cat"></h3>
+								</div>
+								<div class="_-listing--item--content--wrapper">
+									<div class="_-listing--item--content"></div>
+								</div>
+							</a>
+						</li>
 					</ul>
 				</div>
 			</div>
