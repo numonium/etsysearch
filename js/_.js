@@ -1,4 +1,4 @@
-if(_ && _.noConflict){ // previously-defined by underscore
+if((typeof _ !== 'undefined') && _.noConflict){ // previously-defined by underscore
 	var __ = _.noConflict();
 }else if(_){
 	var __ = _;
