@@ -150,18 +150,18 @@
 			result._.setAttribute('data-_-item-uuid', data.listing_id);
 			result._.className = result._.className.replace(' _-blank','');
 
-			result.a = result._.getElementsByClassName('_-listing--item--link')[0];
-			result.a.href = data.url;
+			// ~EN (2015): one reason why I love JS is becauase of lines like this :)
+			(result.a = result._.getElementsByClassName('_-listing--item--link')[0]).href = data.url;
 			
-			result.title = result._.getElementsByClassName('_-listing--item--title')[0];
-			result.title.innerHTML = data.title; // use innerHTML here so we can transfer over HTML entities - will be escaped in TextNode
+			(result.title = result._.getElementsByClassName('_-listing--item--title')[0]).innerHTML = data.title; // ~EN: use innerHTML here so we can transfer over HTML entities - would be escaped in TextNode
 			
+			
+			// ~EN: create text outline "shadow"
 			result.title2 = result.title.cloneNode(true);
 			result.title2.className += ' _-text--outline';
 			result.title.parentNode.appendChild(result.title2);
 			
 			result.cat = result._.getElementsByClassName('_-listing--item--cat')[0];
-//			result.cat.appendChild(document.createTextNode('in: '));
 			var tmp = document.createElement('strong');
 			tmp.appendChild(document.createTextNode(data.category_path ? data.category_path[0] : 'Unknown'));
 			result.cat.appendChild(tmp);
@@ -174,7 +174,7 @@
 			
 			result.content = result._.getElementsByClassName('_-listing--item--content')[0];
 			tmp = document.createElement('p');
-			tmp.appendChild(document.createTextNode(data.description));
+			tmp.innerHTML = data.description;
 			result.content.appendChild(tmp);
 			
 			result.img = result._.getElementsByClassName('_-listing--item--img')[0].getElementsByTagName('img')[0];
