@@ -27,7 +27,7 @@
 			titles : {
 				_stub : ' - EtsySearch&trade;',
 				err : 'Error :(',
-				loading : 'Searching for ' + _.str.token('q') + '...',
+				loading : 'Searching for "' + _.str.token('q') + '"...',
 				results : _.str.token('num') + ' Results for "' + _.str.token('q') + '"'
 			}
 		};
@@ -139,6 +139,41 @@
 			this.e.hashchange();
 
 		},
+		makeResult : function(data){
+			if(!data || (data.state == 'banned')){
+				return false;
+			}
+				
+			var result = {};
+			
+			result._ = this.tem.result.cloneNode(true);
+			result._.setAttribute('data-_-item-uuid', data.listing_id);
+
+			result.a = result._.getElementsByClassName('_-listing--item--link')[0];
+			result.a.href = data.url;
+			
+			result.title = result._.getElementsByClassName('_-listing--item--title')[0];
+			result.title.appendChild(document.createTextNode(data.title));
+			
+			result.cat = result._.getElementsByClassName('_-listing--item--cat')[0];
+			result.cat.appendChild(document.createTextNode('in: '));
+			var tmp = document.createElement('strong');
+			tmp.appendChild(document.createTextNode(data.category_path ? data.category_path[0] : 'Unknown'));
+			result.cat.appendChild(tmp);
+			
+			result.content = result._.getElementsByClassName('_-listing--item--content')[0];
+			tmp = document.createElement('p');
+			tmp.appendChild(document.createTextNode(data.description));
+			result.content.appendChild(tmp);
+			
+			result.img = result._.getElementsByClassName('_-listing--item--img')[0].getElementsByTagName('img')[0];
+			result.img.src = data.Images[0].url_170x135;
+						
+			_.log('api[etsysearch][result][+]',result);
+			
+			return result;
+
+		},
 		results : function(args){
 			if(!args){
 				return false;
@@ -164,24 +199,17 @@
 				return false;
 			}
 			
-			var result = {};
+			var result = null;
 			__t.eles.resultsList.innerHTML='';
 			
 			for(var i in args.data.results){
 				if(!args.data.results.hasOwnProperty(i)){
 					continue;
 				}
-				
-				result._ = this.tem.result.cloneNode(true);
-				result.a = result._.getElementsByClassName('_-listing--item--link')[0];
-				result.a.href = args.data.results[i].url;
-				
-				result.title = result._.getElementsByClassName('_-listing--item--title')[0];
-				result.title.appendChild(document.createTextNode(args.data.results[i].title));
-				
-				_.log('###',result);
-				
-				__t.eles.resultsList.appendChild(result._);
+
+				if(result = __t.makeResult(args.data.results[i])){
+					__t.eles.resultsList.appendChild(result._);
+				}
 				
 			}
 			
